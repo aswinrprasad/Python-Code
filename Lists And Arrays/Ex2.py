@@ -1,17 +1,17 @@
-li=[2,4,6,8,10,12,14,16]
+#Program to print any Arithmetic progression and to append next n terms to the initial progression.
+
+a=input("Enter first term in A.P :")
+d=input("Enter common difference of A.P :")
+size=input("Enter limit for values in A.P :")
+
+li=range(a,size,d)
 print "A.P is :",li
 
-a=li[0]
-d=li[1]-li[0]
-last=li[7]
-
-li2=[last+d,last+2*d,last+3*d,last+4*d]
+size1=input("\nEnter new limit of the A.P :")
+li2=range(li[-1]+d,size1,d)
 
 print "Next 4 terms of the A.P is :",li2
 
-li.append(li2[0])
-li.append(li2[1])
-li.append(li2[2])
-li.append(li2[3])
+li+=li2
 
 print "The A.P now is :",li
