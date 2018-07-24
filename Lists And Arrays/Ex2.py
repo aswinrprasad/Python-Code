@@ -4,13 +4,13 @@ a=input("Enter first term in A.P :")
 d=input("Enter common difference of A.P :")
 size=input("Enter limit for values in A.P :")
 
-li=range(a,size,d)
+li=range(a,size+1,d)
 print "A.P is :",li
 
 size1=input("\nEnter new limit of the A.P :")
-li2=range(li[-1]+d,size1,d)
+li2=range(li[-1]+d,size1+1,d)
 
-print "Next 4 terms of the A.P is :",li2
+print "Next",len(li2)," terms of the A.P is :",li2
 
 li+=li2
 
