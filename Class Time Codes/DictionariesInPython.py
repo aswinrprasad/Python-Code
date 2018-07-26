@@ -16,4 +16,4 @@ fruitDict['orange']-=k
 if k>8 :
 	print "Invalid input"	
 	exit()
-print "The no.of oranges left after k oranges are sold :",fruitDict['orange']
+print "The no.of oranges left after",k," oranges are sold :",fruitDict['orange']
