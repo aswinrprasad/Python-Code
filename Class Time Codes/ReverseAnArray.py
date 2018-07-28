@@ -7,7 +7,7 @@ if t>=1 and t<=100:
 	li = list(map(int, raw_input("Enter the array elements :").split()))	
 	
 	for i in range(0,n):
-	        rev.append(li[n-(i+1)])
+	        rev.append(int(li[int(n)-(int(i+1))]))
 
 	print "The reversed array is :",
 	for i in range(0,n):
