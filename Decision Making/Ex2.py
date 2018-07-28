@@ -1,3 +1,6 @@
+#The rules for winning the prize have got stricter. The first name must now have more than 5
+#characters (as well as end in the letter a). Modify the program in Exercise 1.
+
 name=raw_input("Enter your first name :")
 size=len(name)
 if size >= 5:
