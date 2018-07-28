@@ -1,3 +1,5 @@
+#Write a program where a user enters a number n. The program prints the sentence “tell me why I don’t like mondays?” n times. Can the program be written using both types of loops?
+
 limit=input("Enter how many times you want to print the statement :")
 count=1
 print "The statement is being printed by while loop.." 

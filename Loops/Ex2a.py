@@ -1,3 +1,5 @@
+#Modify the above program using conditional statements inside a loop, to determine if the enter number is a prime number. Hint design the program first using a flow diagram.
+
 count=0
 limit=input("Enter a number :")
 if limit < 10 or limit > 100:
