@@ -1,3 +1,5 @@
+#Create a list that contains the first 3 terms of an arithmetic series.Then increase the list to include the next 4 terms of the arithmetic series. You don’t need to use a loop.
+
 li=[3,6,9]
 print "The A.P is",li
 
