@@ -1,5 +1,5 @@
 #Write a Python function that takes a number as a parameter and check the number is prime or not.
-
+#Error for input 1235. Contribute and correct the code.
 def test_prime(n):
 	if n==1 or n==2:
 		return True 
