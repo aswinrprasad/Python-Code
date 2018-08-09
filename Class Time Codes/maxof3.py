@@ -9,11 +9,6 @@ def maxof2(x,y):
 		return x
 	else:
 		return y
-def maxof3(x,y):
-	if x > y:
-		return x
-	else:
-		return y
 
-print "The max of",a,b,c,"is :", maxof3(maxof2(a,b),c)
+print "The max of",a,",",b,",",c,"is :", maxof2(maxof2(a,b),c)
 
