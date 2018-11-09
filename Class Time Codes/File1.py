@@ -1,8 +1,7 @@
-
+#Program to read any number of lines from a text file.
 def file_read_from_head(fname,nlines):
 	from itertools import islice
-	with open(fname,"r") as f:
-		for line in islice(f,nlines):
+	for line in islice(open(fname,"r"),nlines):
 			print line,
 
-file_read_from_head('read.txt',6)
+file_read_from_head('read.txt',3)
