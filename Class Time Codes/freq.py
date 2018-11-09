@@ -1,3 +1,5 @@
+#To find the frequency of each digit(0-9) in a string of alphabets and numbers. 
+
 x=str(raw_input("Enter String input :"))
 arr=[]
 
