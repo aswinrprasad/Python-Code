@@ -1,8 +1,10 @@
+#Program to write to a file.
+
 def file_read(fname):
 	from itertools import islice
-	with open(fname,"a") as myfile:
-		myfile.write("Python Exercise \n")
-		myfile.write("Java exercises")
+	x=open(fname,"a")
+	x.write("Python Exercise \n")
+	x.write("Java exercises\n")
 	txt=open(fname)
 	print txt.read()
 
