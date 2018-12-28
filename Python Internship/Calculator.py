@@ -9,20 +9,25 @@ while(True):
 	n1=''
 	n2=''
 	for i in ch:
-		if i == ' ':
-			print "Invalid structure of input. Please don't include spacetab!"
+		if i == ' ' or i>='a' and i<='z' or i>='A' and i <='Z':
+			print "Invalid structure of input. Try again!"
 			exit(0)
 	i=0 
 	while(i<len(ch)):
 		if ch[i]>='0' and ch[i]<='9':
 			n1+=ch[i]
-			opf=i
 		else:
-			if ch[i]>='0' and ch[i]<='9':
-				n2+=ch[i]
+			opf=i
+			break
+		i+=1
+	while(i<len(ch)):
+		if ch[i]>='0' and ch[i]<='9':
+			n2+=ch[i]
 		i+=1
 
-	opf=opf+1
+
+
+
 	print "\n",n1+ch[opf]+n2,"=",
 	if ch[opf]=='+' :
 		print op.add2(int(n1),int(n2))
