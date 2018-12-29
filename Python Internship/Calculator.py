@@ -12,8 +12,10 @@ def trig(cal,j):
 		print "Invalid!! Try again!!"
 		exit(0)
 
+print """\n\n\t\t******** PYCAL v0.3
+		\t-Made By ASWIN RAGHUPRASAD ********\n\n"""
 while(True):
-	print "MENU of available calculations :\n1.Add(+)\n2.Subtract(-)\n3.Divivde(/)\n4.Multiply(*)\n5.Remainder(%)\n6.Power(^)\nType Exit/exit to quit the program :\n\n",
+	print "MENU of available calculations :\n1.Add(+)\n2.Subtract(-)\n3.Divivde(/)\n4.Multiply(*)\n5.Remainder(%)\n6.Power(^)\n7.Trigonometric functions(eg:aSin(b))\nType Exit/exit to quit the program :\n\n",
 
 	ch=raw_input("Enter a calculation(eg: 4+3) to be done : ")
 	if ch == 'Exit' or ch== 'exit':
@@ -34,7 +36,8 @@ while(True):
 			opf=i
 			if ch[opf] >='a' and ch[opf] <= 'z' or ch[opf]>='A' and ch[opf] <= 'Z':
 				trigop=trig(ch,opf)
-				n1='1'
+				if n1=='':
+					n1='1'
 			elif ch[opf] == ' ':
 				print "Invalid operand! Try again!"
 				exit(0)
@@ -47,40 +50,40 @@ while(True):
 
 	if ch[opf]=='+' :
 		print "\n",n1+ch[opf]+n2,"=",
-		print op.add2(int(n1),int(n2))
+		print op.add2(float(n1),float(n2))
 	elif ch[opf]=='-' :
 		print "\n",n1+ch[opf]+n2,"=",
-		print op.sub2(int(n1),int(n2))
+		print op.sub2(float(n1),float(n2))
 	elif ch[opf]=='/' :
 		print "\n",n1+ch[opf]+n2,"=",
-		print op.div2(int(n1),int(n2))
+		print op.div2(float(n1),float(n2))
 	elif ch[opf]=='*' :	
 		print "\n",n1+ch[opf]+n2,"=",
-		print op.mul2(int(n1),int(n2))
+		print op.mul2(float(n1),float(n2))
 	elif ch[opf]=='%' :
 		print "\n",n1+ch[opf]+n2,"=",
-		print op.rem1(int(n1),int(n2))
+		print op.rem1(float(n1),float(n2))
 	elif ch[opf]=='^' :	
 		print "\n",n1+ch[opf]+n2,"=",
-		print op.pow(int(n1),int(n2))
+		print op.pow(float(n1),float(n2))
 	elif trigop == 'Sin' or trigop == 'sin':
 		print "\n",n1+trigop+n2,"=",
-		print op.sinc(int(n1),int(n2))
+		print op.sinc(float(n1),float(n2))
 	elif trigop == 'Cos' or trigop == 'cos':
 		print "\n",n1+trigop+n2,"=",
-		print op.cosc(int(n1),int(n2))
+		print op.cosc(float(n1),float(n2))
 	elif trigop == 'Tan' or trigop == 'tan':
 		print "\n",n1+trigop+n2,"=",
-		print op.tanc(int(n1),int(n2))
+		print op.tanc(float(n1),float(n2))
 	elif trigop == 'Cosec' or trigop == 'cosec':
 		print "\n",n1+trigop+n2,"=",
-		print op.cosecc(int(n1),int(n2))
+		print op.cosecc(float(n1),float(n2))
 	elif trigop == 'Sec' or trigop == 'sec':
 		print "\n",n1+trigop+n2,"=",
-		print op.secc(int(n1),int(n2))
+		print op.secc(float(n1),float(n2))
 	elif trigop == 'Cot' or trigop == 'cot':
 		print "\n",n1+trigop+n2,"=",
-		print op.cotc(int(n1),int(n2))
+		print op.cotc(float(n1),float(n2))
 	else :	
 		print "Invalid operator!!"
 
