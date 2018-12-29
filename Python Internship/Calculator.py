@@ -6,14 +6,16 @@ def trig(cal,j):
 		op1+=cal[j]
 		j+=1
 	if op1=='Sin' or op1=='sin' or op1=='Cos' or op1=='cos' or op1=='Tan' or op1=='tan' or op1=='cosec' or op1=='Cosec' or op1=='Sec' or op1=='sec' or op1=='Cot' or op1=='cot':
-		print op1
 		return op1
 	else :
 		print "Invalid!! Try again!!"
 		exit(0)
 
+
 print """\n\n\t\t******** PYCAL v0.3
 		\t-Made By ASWIN RAGHUPRASAD ********\n\n"""
+
+
 while(True):
 	print "MENU of available calculations :\n1.Add(+)\n2.Subtract(-)\n3.Divivde(/)\n4.Multiply(*)\n5.Remainder(%)\n6.Power(^)\n7.Trigonometric functions(eg:aSin(b))\nType Exit/exit to quit the program :\n\n",
 
