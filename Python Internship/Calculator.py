@@ -5,15 +5,16 @@ def word(cal,j):
 	while cal[j]>='a' and cal[j] <= 'z' or cal[j]>='A' and cal[j] <= 'Z':
 		op1+=cal[j]
 		j+=1
-	if op1=='Sin' or op1=='sin' or op1=='Cos' or op1=='cos' or op1=='Tan' or op1=='tan' or op1=='cosec' or op1=='Cosec' or op1=='Sec' or op1=='sec' or op1=='Cot' or op1=='cot':
+	if op1=='Sin' or op1=='sin' or op1=='Cos' or op1=='cos' or op1=='Tan' or op1=='tan' or op1=='cosec' or op1=='Cosec' or op1=='Sec' or op1=='sec' or op1=='Cot' or op1=='cot' or op1=='log' or op1 == 'e':
 		return op1
 	else :
 		print "Invalid!! Try again!!"
 		exit(0)
 
 
-print """\n\n\t\t******** PYCAL v0.3
-		\t-Made By ASWIN RAGHUPRASAD ********\n\n"""
+print """\n\n\t\t******** PYCAL v0.3\t
+		\t-Made By ASWIN RAGHUPRASAD ********\t\n\n"""
+print """\tNOTE:It is a binary calculator which accepts two inputs and an operator.\t\n\n"""
 
 
 while(True):
@@ -32,7 +33,7 @@ while(True):
 
 	i=0 
 	while(i<len(ch)):
-		if ch[i]>='0' and ch[i]<='9':
+		if ch[i]>='0' and ch[i]<='9' or ch[i]=='.' or ch[i]== '-':
 			n1+=ch[i]
 		else:
 			opf=i
@@ -48,7 +49,7 @@ while(True):
 
 
 	while(i<len(ch)):
-		if ch[i]>='0' and ch[i]<='9':
+		if ch[i]>='0' and ch[i]<='9' or ch[i]=='.' or ch[i]== '-':
 			n2+=ch[i]
 		i+=1
 
@@ -89,6 +90,10 @@ while(True):
 	elif trigop == 'Cot' or trigop == 'cot':
 		print "\n",n1+trigop+n2,"=",
 		print op.cotc(float(n1),float(n2))
+	elif trigop == 'log':
+		print "\n",n1+trigop+n2,'=',op.logc(float(n1),float(n2))
+	elif trigop == 'e':
+		print "\n",n1+trigop+"("+n2+")",'=',op.expc(float(n1),float(n2))
 	else :	
 		print "Invalid operator!!"
 
