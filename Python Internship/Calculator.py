@@ -1,6 +1,6 @@
 import calc as op 
 
-def trig(cal,j):
+def word(cal,j):
 	op1=''
 	while cal[j]>='a' and cal[j] <= 'z' or cal[j]>='A' and cal[j] <= 'Z':
 		op1+=cal[j]
@@ -37,7 +37,7 @@ while(True):
 		else:
 			opf=i
 			if ch[opf] >='a' and ch[opf] <= 'z' or ch[opf]>='A' and ch[opf] <= 'Z':
-				trigop=trig(ch,opf)
+				trigop=word(ch,opf)
 				if n1=='':
 					n1='1'
 			elif ch[opf] == ' ':
