@@ -22,14 +22,14 @@ while(True):
 	ch=raw_input("Enter a calculation(eg: 4+3) to be done : ")
 	if ch == 'Exit' or ch== 'exit':
 		exit(0)
+
 	n1=''
 	n2=''
-	for i in range(len(ch)):
-		#if i == ' ' or i>='a' and i<='z' or i>='A' and i <='Z':
-		# ch[0]>='a' and ch[0] <= 'z' or ch[0]>='A' and ch[0] <= 'Z' or
-		if ch[0]==' ' or ch[-1]>='a' and ch[-1] <= 'z' or ch[-1]>='A' and ch[-1] <= 'Z':
-			print "Invalid structure of input. Try again!"
-			exit(0)
+
+	if ch[0]==' ' or ch[-1]>='a' and ch[-1] <= 'z' or ch[-1]>='A' and ch[-1] <= 'Z':
+		print "Invalid structure of input. Try again!"
+		exit(0)
+
 	i=0 
 	while(i<len(ch)):
 		if ch[i]>='0' and ch[i]<='9':
@@ -45,10 +45,13 @@ while(True):
 				exit(0)
 			break
 		i+=1
+
+
 	while(i<len(ch)):
 		if ch[i]>='0' and ch[i]<='9':
 			n2+=ch[i]
 		i+=1
+
 
 	if ch[opf]=='+' :
 		print "\n",n1+ch[opf]+n2,"=",
@@ -89,5 +92,6 @@ while(True):
 	else :	
 		print "Invalid operator!!"
 
+	
 	print "\n\n"
 
