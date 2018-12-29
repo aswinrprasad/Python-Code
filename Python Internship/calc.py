@@ -7,7 +7,7 @@ def sub2(a,b):
 	return a-b
 
 def div2(a,b):
-	return float(a)/float(b)
+	return a/b
 
 def mul2(a,b):
 	return a*b
