@@ -18,7 +18,7 @@ print """\tNOTE:It is a binary calculator which accepts two inputs and an operat
 
 
 while(True):
-	print "MENU of available calculations :\n1.Add(+)\n2.Subtract(-)\n3.Divivde(/)\n4.Multiply(*)\n5.Remainder(%)\n6.Power(^)\n7.Trigonometric functions(eg:aSin(b))\nType Exit/exit to quit the program :\n\n",
+	print "MENU of available calculations :\n1.Add(+)\n2.Subtract(-)\n3.Divivde(/)\n4.Multiply(*)\n5.Remainder(%)\n6.Power(^)\n7.Trigonometric functions(eg:aSin(b))\n8.Log(eg:alogb)\n9.Exponential(eg:ae(b))\nType Exit/exit to quit the program :\n\n",
 
 	ch=raw_input("Enter a calculation(eg: 4+3) to be done : ")
 	if ch == 'Exit' or ch== 'exit':
