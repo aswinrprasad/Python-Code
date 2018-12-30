@@ -18,7 +18,7 @@ print """\tNOTE:It is a binary calculator which accepts two inputs and an operat
 
 
 while(True):
-	print "MENU of available calculations :\n1.Add(+)\n2.Subtract(-)\n3.Divivde(/)\n4.Multiply(*)\n5.Remainder(%)\n6.Power(^)\n7.Trigonometric functions(eg:aSin(b))\n8.Log(eg:alogb)\n9.Exponential(eg:ae(b))\nType Exit/exit to quit the program :\n\n",
+	print "MENU of available calculations :\n1.Add(+)\n2.Subtract(-)\n3.Divivde(/)\n4.Multiply(*)\n5.Remainder(%)\n6.Power(^)\n7.Trigonometric functions(eg:aSin(b))\n8.Log(eg:alogb)\n9.Exponential(eg:ae(b))\n10.Factorial(eg:5!)\nType Exit/exit to quit the program :\n\n",
 
 	ch=raw_input("Enter a calculation(eg: 4+3) to be done : ")
 	if ch == 'Exit' or ch== 'exit':
@@ -26,7 +26,7 @@ while(True):
 
 	n1=''
 	n2=''
-
+	trigop=''
 	if ch[0]==' ' or ch[-1]>='a' and ch[-1] <= 'z' or ch[-1]>='A' and ch[-1] <= 'Z':
 		print "Invalid structure of input. Try again!"
 		exit(0)
@@ -94,6 +94,12 @@ while(True):
 		print "\n",n1+trigop+n2,'=',op.logc(float(n1),float(n2))
 	elif trigop == 'e':
 		print "\n",n1+trigop+"("+n2+")",'=',op.expc(float(n1),float(n2))
+	elif ch[opf] == '!':
+		try:
+			x=int(n1)
+			print "\n",n1+ch[opf],"=",op.fact(int(n1))
+		except ValueError:
+			print "Input cannot be a decimal value for factorial calculation!! Try again!"
 	else :	
 		print "Invalid operator!!"
 
