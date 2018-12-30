@@ -12,7 +12,7 @@ def word(cal,j):
 		exit(0)
 
 
-print """\n\n\t\t******** PYCAL v0.3\t
+print """\n\n\t\t******** PYCAL v0.5\t
 		\t-Made By ASWIN RAGHUPRASAD ********\t\n\n"""
 print """\tNOTE:It is a binary calculator which accepts two inputs and an operator.\t\n\n"""
 
