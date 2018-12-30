@@ -63,3 +63,12 @@ def logc(a,b):
 
 def expc(a,b):
 		return a*m.exp(b)
+
+def fact(a):
+	fact=1
+	size=a
+	for i in range(size):
+		fact*=a
+		a-=1
+		if a == 0:
+			return fact
