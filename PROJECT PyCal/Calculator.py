@@ -5,20 +5,20 @@ def word(cal,j):
 	while cal[j]>='a' and cal[j] <= 'z' or cal[j]>='A' and cal[j] <= 'Z':
 		op1+=cal[j]
 		j+=1
-	if op1=='Sin' or op1=='sin' or op1=='Cos' or op1=='cos' or op1=='Tan' or op1=='tan' or op1=='cosec' or op1=='Cosec' or op1=='Sec' or op1=='sec' or op1=='Cot' or op1=='cot' or op1=='log' or op1 == 'e':
+	if op1=='Sin' or op1=='sin' or op1=='Cos' or op1=='cos' or op1=='Tan' or op1=='tan' or op1=='cosec' or op1=='Cosec' or op1=='Sec' or op1=='sec' or op1=='Cot' or op1=='cot' or op1=='log' or op1 == 'e' or op1 == 'p' or op1== 'c':
 		return op1
 	else :
 		print "Invalid!! Try again!!"
 		exit(0)
 
 
-print """\n\n\t\t******** PYCAL v0.5\t
+print """\n\n\t\t******** PYCAL v0.6\t
 		\t-Made By ASWIN RAGHUPRASAD ********\t\n\n"""
 print """\tNOTE:It is a binary calculator which accepts two inputs and an operator.\t\n\n"""
 
 
 while(True):
-	print "MENU of available calculations :\n1.Add(+)\n2.Subtract(-)\n3.Divivde(/)\n4.Multiply(*)\n5.Remainder(%)\n6.Power(^)\n7.Trigonometric functions(eg:aSin(b))\n8.Log(eg:alogb)\n9.Exponential(eg:ae(b))\n10.Factorial(eg:5!)\nType Exit/exit to quit the program :\n\n",
+	print "MENU of available calculations :\n1.Add(+)\n2.Subtract(-)\n3.Divivde(/)\n4.Multiply(*)\n5.Remainder(%)\n6.Power(^)\n7.Trigonometric functions(eg:aSin(b))\n8.Log(eg:alogb)\n9.Exponential(eg:ae(b))\n10.Factorial(eg:5!)\n11.Permutation(eg:4p2)\n12.Combinations(eg:4c2)\nType Exit/exit to quit the program :\n\n",
 
 	ch=raw_input("Enter a calculation(eg: 4+3) to be done : ")
 	if ch == 'Exit' or ch== 'exit':
@@ -96,8 +96,26 @@ while(True):
 		print "\n",n1+trigop+"("+n2+")",'=',op.expc(float(n1),float(n2))
 	elif ch[opf] == '!':
 		try:
-			x=int(n1)
+			if op.fact(int(n1)) == None:
+				print "Cannot find factorial of a negative number.Try again!\n\n"
+				continue
 			print "\n",n1+ch[opf],"=",op.fact(int(n1))
+		except ValueError:
+			print "Input cannot be a decimal value for factorial calculation!! Try again!"
+	elif trigop == 'p':
+		try:
+			if op.fact(int(n1)) == None or op.fact(int(n2)) == None:
+				print "Cannot find factorial of a negative number.Try again!\n\n"
+				continue
+			print "\n",n1+trigop+n2,"=",op.perm(int(n1),int(n2))
+		except ValueError:
+			print "Input cannot be a decimal value for factorial calculation!! Try again!"
+	elif trigop == 'c':
+		try:
+			if op.fact(int(n1)) == None or op.fact(int(n2)) == None:
+				print "Cannot find factorial of a negative number.Try again!\n\n"
+				continue
+			print "\n",n1+trigop+n2,"=",op.comb(int(n1),int(n2))
 		except ValueError:
 			print "Input cannot be a decimal value for factorial calculation!! Try again!"
 	else :	
