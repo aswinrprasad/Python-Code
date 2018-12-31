@@ -65,6 +65,8 @@ def expc(a,b):
 		return a*m.exp(b)
 
 def fact(a):
+	if a==0:
+		return 1
 	fact=1
 	size=a
 	for i in range(size):
