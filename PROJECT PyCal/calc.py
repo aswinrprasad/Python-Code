@@ -72,3 +72,15 @@ def fact(a):
 		a-=1
 		if a == 0:
 			return fact
+
+def perm(a,b):
+	if a>=b:	
+		return fact(a)/fact(a-b)
+	else:
+		return "Cannot execute!(n<r)"
+
+def comb(a,b):
+	if a>=b:
+		return fact(a)/(fact(b)*fact(a-b))
+	else:
+		return "Cannot execute!(n<r)"
