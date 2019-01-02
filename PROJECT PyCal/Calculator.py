@@ -5,9 +5,12 @@ def word(cal,j):
 	while cal[j]>='a' and cal[j] <= 'z' or cal[j]>='A' and cal[j] <= 'Z':
 		op1+=cal[j]
 		j+=1
-	if op1=='Ans' or op1=='Sin' or op1=='sin' or op1=='Cos' or op1=='cos' or op1=='Tan' or op1=='tan' or op1=='cosec' or op1=='Cosec' or op1=='Sec' or op1=='sec' or op1=='Cot' or op1=='cot' or op1=='log' or op1 == 'e' or op1 == 'p' or op1== 'c':
-		return op1
+	if 'Ans' in op1:
+		return op1,j
+	if op1=='Sin' or op1=='sin' or op1=='Cos' or op1=='cos' or op1=='Tan' or op1=='tan' or op1=='cosec' or op1=='Cosec' or op1=='Sec' or op1=='sec' or op1=='Cot' or op1=='cot' or op1=='log' or op1 == 'e' or op1 == 'p' or op1== 'c':
+		return op1,j
 	else :
+		print op1,j
 		print "Invalid!! Try again!!"
 		exit(0)
 
@@ -57,7 +60,7 @@ while(True):
 		else:
 			opf=i
 			if ch[opf] >='a' and ch[opf] <= 'z' or ch[opf]>='A' and ch[opf] <= 'Z':
-				trigop=word(ch,opf)
+				trigop,j=word(ch,opf)
 				if n1=='':
 					n1='1'
 			elif ch[opf] == ' ':
@@ -73,11 +76,23 @@ while(True):
 		i+=1
 
 
-	if trigop =='Ans':
+	if trigop[0:3] =='Ans':
 		try:
 			opa=0
-			n1=str(Ans)
+			if isinstance(Ans,str)!=True:
+				n1=str(Ans)
+			else:
+				print "The previous result is not defined.Do another calculation without 'Ans' this time.\n\n"
+				continue
 			opf,n2=Answer(n1,ch,opa)
+			if trigop!='Ans':
+				opf=3
+				if ch[opf] >='a' and ch[opf] <= 'z' or ch[opf]>='A' and ch[opf] <= 'Z':
+					trigop,j=word(ch,opf)
+					while(j<len(ch)):
+						if ch[j]>='0' and ch[j]<='9' or ch[j]=='.' or ch[j]== '-':
+							n2+=ch[j]
+						j+=1
 		except NameError:
 			print "You have not done any calculations yet for previous result to be stored! Try again!\n\n"
 			continue
@@ -125,29 +140,44 @@ while(True):
 		print "\n",n1+trigop+"("+n2+")",'=',op.expc(float(n1),float(n2))
 	elif ch[opf] == '!':
 		try:
+			if (float(n1)).is_integer() == True:
+				n1=float(n1)
+				n1=int(n1)
 			if op.fact(int(n1)) == None:
 				print "Cannot find factorial of a negative number.Try again!\n\n"
 				continue
 			Ans=op.fact(int(n1))
-			print "\n",n1+ch[opf],"=",Ans
+			print "\n",str(n1)+ch[opf],"=",Ans
 		except ValueError:
 			print "Input cannot be a decimal value for factorial calculation!! Try again!"
 	elif trigop == 'p':
 		try:
+			if (float(n1)).is_integer() == True:
+				n1=float(n1)
+				n1=int(n1)
+			if (float(n2)).is_integer() == True:
+				n2=float(n2)
+				n2=int(n2)
 			if op.fact(int(n1)) == None or op.fact(int(n2)) == None:
 				print "Cannot find factorial of a negative number.Try again!\n\n"
 				continue
 			Ans=op.perm(int(n1),int(n2))
-			print "\n",n1+trigop+n2,"=",Ans
+			print "\n",str(n1)+trigop+str(n2),"=",Ans
 		except ValueError:
 			print "Input cannot be a decimal value for factorial calculation!! Try again!"
 	elif trigop == 'c':
 		try:
+			if (float(n1)).is_integer() == True:
+				n1=float(n1)
+				n1=int(n1)
+			if (float(n2)).is_integer() == True:
+				n2=float(n2)
+				n2=int(n2)
 			if op.fact(int(n1)) == None or op.fact(int(n2)) == None:
 				print "Cannot find factorial of a negative number.Try again!\n\n"
 				continue
 			Ans=op.comb(int(n1),int(n2))
-			print "\n",n1+trigop+n2,"=",Ans
+			print "\n",str(n1)+trigop+str(n2),"=",Ans
 		except ValueError:
 			print "Input cannot be a decimal value for factorial calculation!! Try again!"
 	else :	
