@@ -2,15 +2,17 @@ import calc as op
 
 def word(cal,j):
 	op1=''
-	while cal[j]>='a' and cal[j] <= 'z' or cal[j]>='A' and cal[j] <= 'Z':
-		op1+=cal[j]
+	while j<len(cal):
+		if cal[j]>='a' and cal[j] <= 'z' or cal[j]>='A' and cal[j] <= 'Z':
+			op1+=cal[j]
+		else:
+			break
 		j+=1
 	if 'Ans' in op1:
 		return op1,j
-	if op1=='Sin' or op1=='sin' or op1=='Cos' or op1=='cos' or op1=='Tan' or op1=='tan' or op1=='cosec' or op1=='Cosec' or op1=='Sec' or op1=='sec' or op1=='Cot' or op1=='cot' or op1=='log' or op1 == 'e' or op1 == 'p' or op1== 'c':
+	if op1=='Ans' or op1=='Sin' or op1=='sin' or op1=='Cos' or op1=='cos' or op1=='Tan' or op1=='tan' or op1=='cosec' or op1=='Cosec' or op1=='Sec' or op1=='sec' or op1=='Cot' or op1=='cot' or op1=='log' or op1 == 'e' or op1 == 'p' or op1== 'c':
 		return op1,j
 	else :
-		print op1,j
 		print "Invalid!! Try again!!"
 		exit(0)
 
@@ -50,8 +52,9 @@ while(True):
 	n2=''
 	trigop=''
 	if ch[0]==' ' or ch[-1]>='a' and ch[-1] <= 'z' or ch[-1]>='A' and ch[-1] <= 'Z':
-		print "Invalid structure of input. Try again!"
-		exit(0)
+		if 'Ans' not in ch:
+			print "Invalid structure of input. Try again!"
+			exit(0)
 
 	i=0 
 	while(i<len(ch)):
@@ -85,6 +88,7 @@ while(True):
 				print "The previous result is not defined.Do another calculation without 'Ans' this time.\n\n"
 				continue
 			opf,n2=Answer(n1,ch,opa)
+			print opf,n2,n1
 			if trigop!='Ans':
 				opf=3
 				if ch[opf] >='a' and ch[opf] <= 'z' or ch[opf]>='A' and ch[opf] <= 'Z':
@@ -96,6 +100,38 @@ while(True):
 		except NameError:
 			print "You have not done any calculations yet for previous result to be stored! Try again!\n\n"
 			continue
+			
+	if trigop[-3:] == 'Ans' and trigop!='Ans':
+		if isinstance(Ans,str)!=True:
+			n2=str(Ans)
+		else:
+			print "The previous result is not defined.Do another calculation without 'Ans' this time.\n\n"
+			continue
+
+		i=0
+		while i<len(ch):
+			if ch[i]>='0' and ch[i]<='9' or ch[i]=='.' or ch[i]== '-' or ch[i] >='a' and ch[i] <= 'z' or ch[i]>='A' and ch[i] <= 'Z':
+				if ch[i]=='A':
+					if ch[i:i+3] == 'Ans':
+						rest=ch[0:i]
+			i+=1
+
+		d=0
+		while(d<len(rest)):
+			if rest[d]>='0' and rest[d]<='9' or rest[d]=='.' or rest[d]== '-':
+				k=0
+			else:
+				opf=d
+				if rest[opf] >='a' and rest[opf] <= 'z' or rest[opf]>='A' and rest[opf] <= 'Z':
+					trigop,j=word(rest,opf)
+					if n1=='':
+						n1='1'
+				elif rest[opf] == ' ':
+					print "Invalid operand! Try again!"
+					exit(0)
+				break
+			d+=1
+
 
 	if ch[opf]=='+' :
 		Ans=op.add2(float(n1),float(n2))
@@ -104,6 +140,7 @@ while(True):
 		Ans=op.sub2(float(n1),float(n2))
 		print "\n",n1+ch[opf]+n2,"=",Ans
 	elif ch[opf]=='/' :
+		print n1,n2
 		Ans=op.div2(float(n1),float(n2))
 		print "\n",n1+ch[opf]+n2,"=",Ans
 	elif ch[opf]=='*' :	
