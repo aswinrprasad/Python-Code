@@ -62,6 +62,7 @@ while(True):
 			n1+=ch[i]
 		else:
 			opf=i
+			print opf
 			if ch[opf] >='a' and ch[opf] <= 'z' or ch[opf]>='A' and ch[opf] <= 'Z':
 				trigop,j=word(ch,opf)
 				if n1=='':
@@ -78,6 +79,14 @@ while(True):
 			n2+=ch[i]
 		i+=1
 
+	if ch[-3:]=='Ans' and not(ch[-4]>='a' and ch[-4]<='z' or ch[-4]>='A' and ch[-4]<='Z'):
+		print ch[-4]
+		if isinstance(Ans,str)!=True:
+			n2=str(Ans)
+			print n2
+		else:
+			print "The previous result is not defined.Do another calculation without 'Ans' this time.\n\n"
+			continue
 
 	if trigop[0:3] =='Ans':
 		try:
@@ -114,6 +123,7 @@ while(True):
 				if ch[i]=='A':
 					if ch[i:i+3] == 'Ans':
 						rest=ch[0:i]
+						print rest
 			i+=1
 
 		d=0
