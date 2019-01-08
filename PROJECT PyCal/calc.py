@@ -86,3 +86,7 @@ def comb(a,b):
 		return fact(a)/(fact(b)*fact(a-b))
 	else:
 		return "Cannot execute!(n<r)"
+
+def reverse(string): 
+    string = "".join(reversed(string)) 
+    return string 
