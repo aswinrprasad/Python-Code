@@ -62,7 +62,6 @@ while(True):
 			n1+=ch[i]
 		else:
 			opf=i
-			print opf
 			if ch[opf] >='a' and ch[opf] <= 'z' or ch[opf]>='A' and ch[opf] <= 'Z':
 				trigop,j=word(ch,opf)
 				if n1=='':
@@ -80,10 +79,8 @@ while(True):
 		i+=1
 
 	if ch[-3:]=='Ans' and not(ch[-4]>='a' and ch[-4]<='z' or ch[-4]>='A' and ch[-4]<='Z'):
-		print ch[-4]
 		if isinstance(Ans,str)!=True:
 			n2=str(Ans)
-			print n2
 		else:
 			print "The previous result is not defined.Do another calculation without 'Ans' this time.\n\n"
 			continue
@@ -97,7 +94,6 @@ while(True):
 				print "The previous result is not defined.Do another calculation without 'Ans' this time.\n\n"
 				continue
 			opf,n2=Answer(n1,ch,opa)
-			print opf,n2,n1
 			if trigop!='Ans':
 				opf=3
 				if ch[opf] >='a' and ch[opf] <= 'z' or ch[opf]>='A' and ch[opf] <= 'Z':
@@ -123,7 +119,6 @@ while(True):
 				if ch[i]=='A':
 					if ch[i:i+3] == 'Ans':
 						rest=ch[0:i]
-						print rest
 			i+=1
 
 		d=0
@@ -141,7 +136,44 @@ while(True):
 					exit(0)
 				break
 			d+=1
+	"""
+	wc = dict.fromkeys(ch, 0)
+	for c in ch: 
+		wc[c] += 1
 
+
+	if '-' in ch :
+		i=0
+		count=0 
+		while(i<len(ch)):
+			if ch[i]>='0' and ch[i]<='9' or ch[i]=='.' or ch[i]== '-':
+				n1+=ch[i]
+				if ch[i]=='-'
+					count+=1
+				
+				opf=n[1:].find('-')
+
+
+			else:
+				opf=i
+				if ch[opf] >='a' and ch[opf] <= 'z' or ch[opf]>='A' and ch[opf] <= 'Z':
+					trigop,j=word(ch,opf)
+					if n1=='':
+						n1='1'
+				elif ch[opf] == ' ':
+					print "Invalid operand! Try again!"
+					exit(0)
+				break
+			i+=1
+
+
+		while(i<len(ch)):
+			if ch[i]>='0' and ch[i]<='9' or ch[i]=='.' or ch[i]== '-':
+				n2+=ch[i]
+			i+=1
+	"""
+
+		
 
 	if ch[opf]=='+' :
 		Ans=op.add2(float(n1),float(n2))
@@ -150,7 +182,6 @@ while(True):
 		Ans=op.sub2(float(n1),float(n2))
 		print "\n",n1+ch[opf]+n2,"=",Ans
 	elif ch[opf]=='/' :
-		print n1,n2
 		Ans=op.div2(float(n1),float(n2))
 		print "\n",n1+ch[opf]+n2,"=",Ans
 	elif ch[opf]=='*' :	
