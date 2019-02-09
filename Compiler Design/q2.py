@@ -1,10 +1,14 @@
-#code :u4cse16115
+#Program to check whether the input string is valid for the given grammar.
 
 import sys
 global string,i,l
 i=0
 l=''
 string=''
+
+print """\nGrammar :
+S->a | ^ | (T)
+T-> T, S | S\n"""
 
 def S():
 	global l

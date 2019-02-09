@@ -1,9 +1,17 @@
-#coded :u4cse16115
+#Program to check whether the input string is valid for the given grammar.
+
 import sys
 global string,i,l
 i=0
 l=''
 string=''
+
+print """\nGrammar :
+E-> TA
+A- +TA | ε
+T-> FB
+B- *FB | ε
+F-> (E) | id\n"""
 
 def E():
 	global l

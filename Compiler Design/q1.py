@@ -1,3 +1,5 @@
+#Program to check whether the input string is valid for the given grammar.
+
 import sys
 next = None
     
