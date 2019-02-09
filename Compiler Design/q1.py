@@ -2,7 +2,12 @@
 
 import sys
 next = None
-    
+
+print """\nGrammar :
+S-> Aa | bAc | Bc | bBa
+A->d
+B->d\n"""
+
 def S():
     print "\n\nSource :",
     scan()

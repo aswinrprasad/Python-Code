@@ -19,9 +19,11 @@ def A():
 		match('F')
 		match('C')
 		A1()
+		return True
 	elif l=='D':
 		match('D')
 		A1()
+		return True
 	else:
 		print "REJECTED"
 		exit(0)
@@ -36,7 +38,6 @@ def A1():
 	else:
 		print "REJECTED"
 		exit(0)
-
 	
 def getch():
 	global i,l
@@ -48,8 +49,10 @@ def match(c):
 	if c == l:
 		getch()
     	return
+
 	print "REJECTED"
 	exit(0)
+	
 
 print "Note : ' ' is the input to be given for epsilon.\n'id' here is 'i' in input.\n"
 
