@@ -1,4 +1,4 @@
-#Sherlock and the Valid String
+#Sherlock and the Valid String - Hackerrank 
 
 def prod(d) : 
     p=1
